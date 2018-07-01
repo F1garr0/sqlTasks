@@ -1,5 +1,7 @@
 # sqlTasks
 
+![alt text](.base.png)
+
 #### 1. Вывести список сотрудников, получающих заработную плату большую, чем у непосредственного руководителя
 ```sql
 select emp1.name from employee as emp1, employee as emp2 where emp1.cheif_id=emp2.id and emp1.salary>emp2.salary
