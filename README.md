@@ -23,10 +23,10 @@ select emp1.name from employee as emp1 where emp1.cheif_id='' or emp1.departamen
 ```
 
 #### 5. Найти список ID отделов с максимальной суммарной зарплатой сотрудников
-```sql
-select departament_id, sum(salary) as sum_salary from employee group by departament_id order by sum_salary desc limit 1
-```
 
+```sql
+select departament_id, sum_salary as max_sum from (select departament_id, sum(salary) as sum_salary from employee group by departament_id) where max_sum=(select sum(salary) from employee group by departament_id order by salary desc limit 1)
+```
 ####
 ```sql
 
